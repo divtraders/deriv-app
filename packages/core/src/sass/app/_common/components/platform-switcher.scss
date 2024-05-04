@@ -1,6 +1,5 @@
 .platform-switcher {
     display: flex;
-    align-items: center;
     padding: 0.8rem;
     transition: background-color 0.3s;
     cursor: pointer;
@@ -43,4 +42,10 @@
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: transparent;
     }
+}
+
+.platform-switcher__name {
+    font-size: 20px;
+    color: var(--text-color);
+    font-weight: bold;
 }

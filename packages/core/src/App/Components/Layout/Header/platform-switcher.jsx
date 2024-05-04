@@ -29,8 +29,8 @@ const PlatformSwitcher = ({
             <Icon
                 className='platform-switcher__icon'
                 icon='IcTelegram'
-                width={120}
-                height={25}
+                width={50}
+                height={50}
             />
             <span className="platform-switcher__name">Telegram</span>
         </div>
