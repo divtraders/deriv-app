@@ -3,6 +3,8 @@
     padding: 0.8rem;
     transition: background-color 0.3s;
     cursor: pointer;
+    justify-content: center;
+
 
     &:not(&--is-mobile):hover {
         background-color: var(--general-hover);
