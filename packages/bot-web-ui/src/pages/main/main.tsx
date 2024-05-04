@@ -42,11 +42,11 @@ const AppWrapper = observer(() => {
     const init_render = React.useRef(true);
     const { ui } = useStore();
     const { url_hashed_values, is_mobile } = ui;
-    const hash = ['dashboard', 'bot_builder', 'chart', 'analysi', 'tutorial'];
+    const hash = ['dashboard', 'bot_builder', 'analysistool', 'chart', 'tutorial'];
 
     let tab_value: number | string = active_tab;
     const GetHashedValue = (tab: number) => {
-        tab_value = url_hashed_values?.split('#')[1];
+        tab_value = url_hashed_values?.split('*')[1];
         if (!tab_value) return tab;
         return Number(hash.indexOf(String(tab_value)));
     };
