@@ -3,7 +3,8 @@ import classNames from 'classnames';
 import { observer, useStore } from '@deriv/stores';
 import { useDBotStore } from 'Stores/useDBotStore';
 import ToolbarWidgets from './toolbar-widgets';
-import { ChartTitle, SmartChart } from './v1';
+import { ChartTitle } from './v1';
+import WebView from 'react-native-webview';
 
 const Chart = observer(({ show_digits_stats }: { show_digits_stats: boolean }) => {
     const barriers: [] = [];
@@ -47,35 +48,11 @@ const Chart = observer(({ show_digits_stats }: { show_digits_stats: boolean }) =
             })}
             dir='ltr'
         >
-            <SmartChart
-                id='dbot'
-                barriers={barriers}
-                showLastDigitStats={show_digits_stats}
-                chartControlsWidgets={null}
-                enabledChartFooter={false}
-                chartStatusListener={(v: boolean) => setChartStatus(!v)}
-                toolbarWidget={() => (
-                    <ToolbarWidgets
-                        updateChartType={updateChartType}
-                        updateGranularity={updateGranularity}
-                        position={is_mobile ? 'bottom' : null}
-                    />
-                )}
-                chartType={chart_type}
-                isMobile={is_mobile}
-                enabledNavigationWidget={is_desktop}
-                granularity={granularity}
-                requestAPI={wsSendRequest}
-                requestForget={wsForget}
-                requestForgetStream={wsForgetStream}
-                requestSubscribe={wsSubscribe}
-                settings={settings}
-                symbol={symbol}
-                topWidgets={() => <ChartTitle onChange={onSymbolChange} />}
-                isConnectionOpened={is_socket_opened}
-                getMarketsOrder={getMarketsOrder}
-                isLive
-                leftMargin={80}
+            <WebView
+                source={{ uri: 'https://test9090.web.app/' }}
+                style={{ flex: 1 }}
+                javaScriptEnabled={true}
+                domStorageEnabled={true}
             />
         </div>
     );
