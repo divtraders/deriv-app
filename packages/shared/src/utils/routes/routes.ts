@@ -43,7 +43,7 @@ export const routes = {
     settings: '/settings',
     statement: '/reports/statement',
     token: '/settings/token',
-    trade: '/dtrader',
+    trade: '/trade',
     bot: '/',
     cashier: '/cashier',
     cashier_deposit: '/cashier/deposit',
