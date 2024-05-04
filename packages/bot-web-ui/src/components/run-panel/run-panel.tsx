@@ -247,7 +247,7 @@ const RunPanel = observer(() => {
     const { statistics } = transactions;
     const { active_tour, active_tab } = dashboard;
     const { total_payout, total_profit, total_stake, won_contracts, lost_contracts, number_of_runs } = statistics;
-    const { BOT_BUILDER, CHART } = DBOT_TABS;
+    const { BOT_BUILDER, ANALYSIS, CHART } = DBOT_TABS;
 
     React.useEffect(() => {
         onMount();
@@ -290,7 +290,7 @@ const RunPanel = observer(() => {
         />
     );
 
-    const show_run_panel = [BOT_BUILDER, CHART].includes(active_tab) || active_tour;
+    const show_run_panel = [BOT_BUILDER, ANALYSIS, CHART].includes(active_tab) || active_tour;
     if ((!show_run_panel && !is_mobile) || active_tour === 'bot_builder') return null;
 
     return (

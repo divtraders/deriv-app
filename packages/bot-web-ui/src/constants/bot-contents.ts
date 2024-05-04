@@ -14,8 +14,9 @@ export const tabs_title: TTabsTitle = Object.freeze({
 export const DBOT_TABS: TDashboardTabIndex = Object.freeze({
     DASHBOARD: 0,
     BOT_BUILDER: 1,
-    CHART: 2,
-    TUTORIAL: 3,
+    ANALYSIS: 2,
+    CHART: 3,
+    TUTORIAL: 4,
 });
 
 export const MAX_STRATEGIES = 10;
