@@ -1,29 +1,24 @@
 .platform-switcher {
     display: flex;
+    align-items: center;
+    justify-content: center; /* Horizontal centering */
     padding: 0.8rem;
     transition: background-color 0.3s;
     cursor: pointer;
-    justify-content: center;
-
 
     &:not(&--is-mobile):hover {
         background-color: var(--general-hover);
     }
-    & svg:first-child,
-    p,
-    h1 {
-        margin: 0 0 0 0.8rem;
-    }
-    & svg:last-child {
-        margin: 0 0.8rem;
-    }
+
     &__arrow {
         transition: transform 0.3s ease;
         transform: rotate(0deg);
     }
+
     &__arrow .color1-fill {
         fill: var(--text-general);
     }
+
     &__preloader {
         margin-top: 4px;
         align-self: center;
@@ -33,13 +28,15 @@
             width: 162px;
         }
     }
+
     &--active &__arrow {
         transform: rotate(180deg);
     }
+
     @include mobile {
         width: 100%;
         height: 100%;
-        justify-content: center;
+        justify-content: center; /* Horizontal centering */
         user-select: none;
         -webkit-touch-callout: none;
         -webkit-tap-highlight-color: transparent;
@@ -50,4 +47,5 @@
     font-size: 20px;
     color: var(--text-color);
     font-weight: bold;
+    text-align: center; /* Centering text within its container */
 }
