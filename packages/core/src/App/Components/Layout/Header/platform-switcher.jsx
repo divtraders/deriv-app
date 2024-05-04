@@ -32,6 +32,7 @@ const PlatformSwitcher = ({
                 width={120}
                 height={25}
             />
+            <span className="platform-switcher__name">Telegram</span>
         </div>
     );
 };
