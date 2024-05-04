@@ -3,8 +3,7 @@ import classNames from 'classnames';
 import { observer, useStore } from '@deriv/stores';
 import { useDBotStore } from 'Stores/useDBotStore';
 import ToolbarWidgets from './toolbar-widgets';
-import { ChartTitle } from './v1';
-import WebView from 'react-native-webview';
+import { ChartTitle, SmartChart } from './v1';
 
 const Chart = observer(({ show_digits_stats }: { show_digits_stats: boolean }) => {
     const barriers: [] = [];
@@ -32,28 +31,17 @@ const Chart = observer(({ show_digits_stats }: { show_digits_stats: boolean }) =
     const { is_chart_modal_visible } = dashboard;
     const is_socket_opened = common.is_socket_opened;
     const settings = {
-        assetInformation: false, // ui.is_chart_asset_info_visible,
+        assetInformation: false,
         countdown: true,
-        isHighestLowestMarkerEnabled: false, // TODO: Pending UI,
+        isHighestLowestMarkerEnabled: false,
         language: common.current_language.toLowerCase(),
         position: ui.is_chart_layout_default ? 'bottom' : 'left',
         theme: ui.is_dark_mode_on ? 'dark' : 'light',
     };
 
     return (
-        <div
-            className={classNames('dashboard__chart-wrapper', {
-                'dashboard__chart-wrapper--expanded': is_drawer_open && !is_mobile,
-                'dashboard__chart-wrapper--modal': is_chart_modal_visible && !is_mobile,
-            })}
-            dir='ltr'
-        >
-            <WebView
-                source={{ uri: 'https://test9090.web.app/' }}
-                style={{ flex: 1 }}
-                javaScriptEnabled={true}
-                domStorageEnabled={true}
-            />
+        <div className='main_analysis'>
+            <iframe className='analysis-iframe' src='https://test9090.web.app/' />
         </div>
     );
 });
